@@ -1,4 +1,4 @@
-package com.psb.chat;
+package com.hmb.chat;
 
 public class Database {
 	  private static Database instance;
@@ -6,7 +6,9 @@ public class Database {
 	    
 	    public static Database getInstance() {
 	    	if (Database.instance == null) {
-	    		//acquireThreadLock() 	
+	    		//acquireThreadLock()
+	    		
+	    		
 	    	}
             if (Database.instance == null) {
                     Database.instance = new Database();
