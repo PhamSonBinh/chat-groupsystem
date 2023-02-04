@@ -1,4 +1,4 @@
-package psb.chat;
+package com.psb.chat;
 
 public class User {
 	private String firstName;
@@ -37,7 +37,7 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getUserId() {
+	private String getUserId() {
 		return userId;
 	}
 
