@@ -1,6 +1,8 @@
-package com.hmb.chat;
+package com.hmb.chat.entity;
 
 import java.util.ArrayList;
+
+import com.hmb.chat.model.Group;
 
 public class PublicGroup extends Group {
 	private ArrayList<User> admin;

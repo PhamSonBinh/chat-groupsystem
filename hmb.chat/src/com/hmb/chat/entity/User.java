@@ -1,4 +1,4 @@
-package com.hmb.chat;
+package com.hmb.chat.entity;
 
 public class User {
 	private String firstName;

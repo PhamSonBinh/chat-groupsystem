@@ -2,7 +2,7 @@ package com.hmb.chat.repository;
 
 import java.util.ArrayList;
 
-import com.hmb.chat.Group;
+import com.hmb.chat.model.Group;
 
 
 public class GroupRepository implements IRepository<Group> {

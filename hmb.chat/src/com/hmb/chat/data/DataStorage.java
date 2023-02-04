@@ -1,22 +1,25 @@
 package com.hmb.chat.data;
 
-import com.hmb.chat.Group;
-import com.hmb.chat.User;
+import com.hmb.chat.entity.User;
+import com.hmb.chat.model.Group;
+import com.hmb.chat.repository.GroupRepository;
 import com.hmb.chat.repository.IRepository;
+import com.hmb.chat.repository.UserRepository;
 
-public abstract class DataStorage {
-	protected IRepository<User> users;
-	protected IRepository<Group> groups;
-	public IRepository<User> getUsers() {
+public class DataStorage {
+	protected UserRepository users;
+	protected GroupRepository groups;
+	
+	public UserRepository getUsers() {
 		return users;
 	}
-	protected void setUsers(IRepository<User> users) {
+	protected void setUsers(UserRepository users) {
 		this.users = users;
 	}
-	public IRepository<Group> getGroups() {
+	public GroupRepository getGroups() {
 		return groups;
 	}
-	protected void setGroups(IRepository<Group> groups) {
+	protected void setGroups(GroupRepository groups) {
 		this.groups = groups;
 	}
     

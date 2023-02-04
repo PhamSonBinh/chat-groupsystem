@@ -6,17 +6,15 @@ import com.hmb.chat.repository.UserRepository;
 public class InMemeoryDataStorage extends DataStorage {
 	private InMemeoryDataStorage storage;
 
-	private InMemeoryDataStorage() {
+	public InMemeoryDataStorage() {
 		users = new UserRepository();
 		groups = new GroupRepository();
-
 	}
 
 	public InMemeoryDataStorage GetDataStorage() {
 		if (storage == null) {
 			storage = new InMemeoryDataStorage();
 		}
-
 		return storage;
 	}
 

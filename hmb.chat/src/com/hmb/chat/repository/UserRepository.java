@@ -2,7 +2,7 @@ package com.hmb.chat.repository;
 
 import java.util.ArrayList;
 
-import com.hmb.chat.User;
+import com.hmb.chat.entity.User;
 
 public class UserRepository implements IRepository<User> {
 
