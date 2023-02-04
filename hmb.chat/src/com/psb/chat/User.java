@@ -1,4 +1,4 @@
-package com.hmb.chat;
+package com.psb.chat;
 
 public class User {
 	private String firstName;

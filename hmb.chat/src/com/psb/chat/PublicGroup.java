@@ -1,13 +1,12 @@
-package com.hmb.chat;
+package com.psb.chat;
 
 import java.util.ArrayList;
 
-public class PrivateClass extends Group {
+public class PublicGroup extends Group {
 	private ArrayList<User> admin;
-	public PrivateClass(ArrayList<User> users, String chatGroupId, int numberOfUsers) {
+	public PublicGroup(ArrayList<User> users, String chatGroupId, int numberOfUsers) {
 		super(users, chatGroupId, numberOfUsers);
 		// TODO Auto-generated constructor stub
 	}
 	
-
 }

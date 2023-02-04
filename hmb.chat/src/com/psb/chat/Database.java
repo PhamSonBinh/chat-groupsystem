@@ -1,10 +1,10 @@
-package com.hmb.chat;
+package com.psb.chat;
 
 public class Database {
-	  private static Database instance;
+	private static Database instance;
 	  
 	    
-	    public static Database getInstance() {
+	  	public static Database getInstance() {
 	    	if (Database.instance == null) {
 	    		//acquireThreadLock()
 	    		
@@ -14,7 +14,10 @@ public class Database {
                     Database.instance = new Database();
             }
             return Database.instance;
-	    }
+	    	}
+		public static void setInstance(Database instance) {
+				Database.instance = instance;
+			}
 	    public void callQuery()  {
 	        // For instance, all database queries of an app go
 	        // through this method. Therefore, you can place
