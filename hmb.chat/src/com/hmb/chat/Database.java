@@ -1,4 +1,4 @@
-package com.psb.chat;
+package com.hmb.chat;
 
 public class Database {
 	private static Database instance;
