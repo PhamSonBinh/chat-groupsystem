@@ -1,23 +1,18 @@
 package com.hmb.chat.repository;
-
-import java.util.ArrayList;
-
-import com.hmb.chat.model.Group;
-
-
-public class GroupRepository implements IRepository<Group> {
+import java.util.List;
+import com.hmb.chat.Database;
+import com.hmb.chat.entity.Group;
 
 
-	private ArrayList<Group> groups;
-	public GroupRepository(ArrayList<Group> groups) {
-		this.groups = groups;
-	}
+public class GroupRepository implements Repository<Group> {
+	private List<Group> storage;
+
 	public GroupRepository() {
-		groups = new ArrayList<>();
+		storage = Database.getInstance().getGroupList();
 	}
 	@Override
-	public void add(Group entity) {
-		groups.add(entity);
+	public void add(Group group) {
+		storage.add(group);
 		
 	}
 
@@ -33,16 +28,21 @@ public class GroupRepository implements IRepository<Group> {
 		
 	}
 
-	@Override
-	public Group get(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public boolean exist(String id) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	@Override
+	public List getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Group getElement(String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

@@ -1,9 +1,9 @@
 package com.hmb.chat.data;
 
+import com.hmb.chat.entity.Group;
 import com.hmb.chat.entity.User;
-import com.hmb.chat.model.Group;
 import com.hmb.chat.repository.GroupRepository;
-import com.hmb.chat.repository.IRepository;
+import com.hmb.chat.repository.Repository;
 import com.hmb.chat.repository.UserRepository;
 
 public class DataStorage {

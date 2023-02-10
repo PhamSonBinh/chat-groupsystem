@@ -13,8 +13,9 @@ public class UserService {
 		dataStorage = new InMemeoryDataStorage();
 	}
  	
-	public static boolean login (String id, String password) {
-		String 
+	public static boolean login (String username, String password) {
+//		InMemeoryDataStorage data = new InMemeoryDataStorage();
+//		if (data.getUsers().get(username) != null) && (data.a)
 		return false;
 	}
 }

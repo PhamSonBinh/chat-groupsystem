@@ -1,8 +1,6 @@
-package com.hmb.chat.model;
+package com.hmb.chat.entity;
 
 import java.util.ArrayList;
-
-import com.hmb.chat.entity.User;
 
 public abstract class Group {
 	private ArrayList<User> users;
