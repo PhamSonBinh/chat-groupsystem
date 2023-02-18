@@ -1,4 +1,4 @@
-package com.hmb.chat.Service;
+package com.hmb.chat.service;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

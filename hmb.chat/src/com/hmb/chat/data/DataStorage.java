@@ -1,16 +1,15 @@
 package com.hmb.chat.data;
 
-import com.hmb.chat.entity.Group;
 import com.hmb.chat.entity.User;
 import com.hmb.chat.repository.GroupRepository;
 import com.hmb.chat.repository.Repository;
 import com.hmb.chat.repository.UserRepository;
 
 public class DataStorage {
-	protected UserRepository users;
+	protected Repository<User> users;
 	protected GroupRepository groups;
 	
-	public UserRepository getUsers() {
+	public Repository<User> getUsers() {
 		return users;
 	}
 	protected void setUsers(UserRepository users) {

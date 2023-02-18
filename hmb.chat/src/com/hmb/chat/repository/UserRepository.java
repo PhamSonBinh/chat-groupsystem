@@ -5,7 +5,7 @@ import java.util.List;
 import com.hmb.chat.Database;
 import com.hmb.chat.entity.User;
 
-public class UserRepository implements Repository<User> {
+public abstract class UserRepository implements Repository<User> {
 
 	private static List<User> storage;
 

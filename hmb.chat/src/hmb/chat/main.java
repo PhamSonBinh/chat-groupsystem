@@ -8,12 +8,9 @@ import com.hmb.chat.repository.UserRepository;
 public class main {
 
 	public static void main(String[] args) {
-		User fakeUsers1 = new User("firstName1", "lastName1", "userId1", "userName1", "password1", "gender1",
-				"dateOfBirth1");
-		User fakeUsers2 = new User("firstName2", "lastName2", "userId2", "userName2", "password2", "gender2",
-				"dateOfBirth2");
-		User fakeUsers3 = new User("firstName3", "lastName3", "userId3", "userName3", "password3", "gender3",
-				"dateOfBirth3");
+		User fakeUsers1 = new User("firstName1", "lastName1", "userId1", "userName1", "password1", "gender1");
+		User fakeUsers2 = new User("firstName2", "lastName2", "userId2", "userName2", "password2", "gender2");
+		User fakeUsers3 = new User("firstName3", "lastName3", "userId3", "userName3", "password3", "gender3");
 		UserRepository obj = new UserRepository();
 		obj.add(fakeUsers1);
 		obj.add(fakeUsers2);

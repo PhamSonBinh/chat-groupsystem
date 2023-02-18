@@ -1,5 +1,7 @@
 package com.hmb.chat.repository;
 import java.util.List;
+import java.util.function.Predicate;
+
 import com.hmb.chat.Database;
 import com.hmb.chat.entity.Group;
 
@@ -41,6 +43,11 @@ public class GroupRepository implements Repository<Group> {
 	}
 	@Override
 	public Group getElement(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Group getFirst(Predicate<Group> predicate) {
 		// TODO Auto-generated method stub
 		return null;
 	}
