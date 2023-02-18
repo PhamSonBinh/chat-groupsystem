@@ -2,9 +2,7 @@ package hmb.chat;
 
 import java.util.List;
 
-import com.hmb.chat.Service.UserService;
 import com.hmb.chat.entity.User;
-import com.hmb.chat.repository.Repository;
 import com.hmb.chat.repository.UserRepository;
 
 public class main {
