@@ -1,5 +1,7 @@
 package com.hmb.chat.entity;
 
+import com.hmb.chat.Service.TextService;
+
 public class User {
 	private String firstName;
 	private String lastName;
@@ -8,6 +10,7 @@ public class User {
 	private String password;
 	private String gender;
 	private String dateOfBirth;
+	private String hashedPassword;
 
 	public User(String firstName, String lastName, String userId, String userName, String password, String gender,
 			String dateOfBirth) {
@@ -19,6 +22,7 @@ public class User {
 		this.password = password;
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
+		this.hashedPassword = hash(password);
 	}
 
 	public String getFirstName() {
@@ -76,5 +80,14 @@ public class User {
 	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-
+	
+	public boolean login(String password) {
+        String hashedInputPassword = hash(password);
+        return hashedPassword.equals(hashedInputPassword);
+    }
+	
+	private String hash(String text) {
+        TextService textService = new TextService();
+        return textService.hashMD5(text);
+    }
 }
