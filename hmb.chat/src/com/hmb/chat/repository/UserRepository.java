@@ -12,7 +12,10 @@ public class UserRepository implements Repository<User> {
 	public UserRepository() {
 		UserRepository.storage = Database.getInstance().getUserList();
 	}
-
+	public User findbyID (int id) {
+		
+		return null;
+	}
 	@Override
 	public void add(User user) {
 		storage.add(user);

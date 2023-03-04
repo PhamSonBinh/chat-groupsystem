@@ -11,7 +11,6 @@ public class User {
 
 	public User(String firstName, String lastName, String userId, String userName, String password, String gender,
 			String dateOfBirth) {
-		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userId = userId;
@@ -41,7 +40,7 @@ public class User {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	private void setUserId(String userId) {
 		this.userId = userId;
 	}
 

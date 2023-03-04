@@ -6,7 +6,7 @@ import com.hmb.chat.repository.GroupRepository;
 import com.hmb.chat.repository.Repository;
 import com.hmb.chat.repository.UserRepository;
 
-public class DataStorage {
+public abstract class DataStorage {
 	protected UserRepository users;
 	protected GroupRepository groups;
 	
