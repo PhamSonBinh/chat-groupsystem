@@ -1,4 +1,4 @@
-package com.hmb.chat;
+package com.hmb.chat.entity;
 
 public enum Gender {
 	male,

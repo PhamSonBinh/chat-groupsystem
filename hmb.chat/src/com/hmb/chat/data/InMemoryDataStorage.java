@@ -1,28 +1,19 @@
 package com.hmb.chat.data;
 
-import com.hmb.chat.repository.GroupRepository;
-import com.hmb.chat.repository.UserRepository;
+import com.hmb.chat.entity.User;
+import com.hmb.chat.repository.InMemoryRepository;
 
 public class InMemoryDataStorage extends DataStorage {
-	private InMemoryDataStorage storage;
+	private static InMemoryDataStorage storage;
 
 	private InMemoryDataStorage() {
-		users = new UserRepository();
-		groups = new GroupRepository();
+		users = new InMemoryRepository<User>();	
 	}
 
-	public InMemoryDataStorage GetDataStorage() {
+	public static InMemoryDataStorage GetInStance() {
 		if (storage == null) {
 			storage = new InMemoryDataStorage();
 		}
 		return storage;
-	}
-
-	public InMemoryDataStorage getStorage() {
-		return storage;
-	}
-
-	public void setStorage(InMemoryDataStorage storage) {
-		this.storage = storage;
 	}
 }

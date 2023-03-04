@@ -12,6 +12,8 @@ public class InMemoryRepository<TEntity extends BaseEntity> implements Repositor
 	public InMemoryRepository() {
 		entities = new ArrayList<>();
 	}
+	
+	
 
 	@Override
 	public List<TEntity> get(Predicate<TEntity> filter) {
