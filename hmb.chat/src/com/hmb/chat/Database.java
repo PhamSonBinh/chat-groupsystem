@@ -7,8 +7,7 @@ public class Database {
 	private static Database instance;
 	private static List userList = new ArrayList<>();
 	private static List groupList = new ArrayList<>();
-	private Database() {	
-	}
+	
 
 	public static Database getInstance() {
 		if (instance == null) {

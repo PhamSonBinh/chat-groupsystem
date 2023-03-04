@@ -1,28 +1,33 @@
 package com.hmb.chat.entity;
 
-public class User {
+import com.hmb.chat.Service.TextService;
+
+public class User extends BaseEntity {
 	private String firstName;
 	private String lastName;
 	private String userId;
-	private String userName;
-	private String password;
 	private String gender;
 	private String dateOfBirth;
-
-	public User(String firstName, String lastName, String userId, String userName, String password, String gender,
-			String dateOfBirth) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.userId = userId;
-		this.userName = userName;
-		this.password = password;
-		this.gender = gender;
-		this.dateOfBirth = dateOfBirth;
+	private String username;
+    private String hashedPassword;
+	
+	public User(String username, String password) {
+        hashedPassword = hash(password);
+        this.username = username;
+    }
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
+	 private String hash(String text) {
+	        TextService textService = new TextService();
+	        return textService.hashMD5(text);
+	    }
 	public String getFirstName() {
 		return firstName;
 	}
+	
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -44,21 +49,6 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 
 	public String getGender() {
 		return gender;
