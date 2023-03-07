@@ -2,12 +2,24 @@ package com.hmb.chat.entity;
 
 import java.util.ArrayList;
 
-public class PrivateGroup extends Group {
-	
-	public PrivateGroup(ArrayList<User> users, String chatGroupId, int numberOfUsers) {
-		super(users, chatGroupId);
-		// TODO Auto-generated constructor stub
-	}
-	
+import java.util.List;
 
+public class PrivateGroup extends Group {
+	private String groupCode;
+	private String groupName;
+	private List<User> admins;
+
+	public PrivateGroup(User user) {
+		super();
+		admins.add(user);
+	}
+
+	private boolean joinByInvitation(User user) {
+		int id = user.getId();
+		if (getUserById(id) == null) {
+			addUser(user);
+			return true;
+		}
+		return false;
+	}
 }

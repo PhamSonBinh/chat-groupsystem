@@ -1,36 +1,50 @@
 package com.hmb.chat.entity;
 
+import java.util.Date;
+
 import com.hmb.chat.Service.TextService;
 
-public class User extends BaseEntity {
-	private String firstName;
+public class User extends BaseEntity{
 	private String lastName;
-	private String userId;
+	private String firstName;
+	private String fullName;
+	private String userName;
+	private String hashPassword;
 	private String gender;
-	private String dateOfBirth;
-	private String username;
-    private String hashedPassword;
-	
-	public User(String username, String password) {
-        hashedPassword = hash(password);
-        this.username = username;
-    }
-	
+	private Date dateOfBirth;
+	private int id;
+
+	public User(String lastName, String firstName, String fullName, String userName, String hashPassword, String gender,
+			Date dateOfBirth, int id) {
+		super();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.fullName = fullName;
+		this.userName = userName;
+		this.hashPassword = hashPassword;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.id = id;
+	}
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	 private String hash(String text) {
-	        TextService textService = new TextService();
-	        return textService.hashMD5(text);
-	    }
-	public String getFirstName() {
-		return firstName;
+
+	public User(String userName, String password) {
+		this.userName = userName;
+		this.hashPassword = hash(password);
+	}
+
+	private String hash(String text) {
+		TextService textService = new TextService();
+		return textService.hashMD5(text);
 	}
 	
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public boolean login(String password) {
+		String hashedInputPassword = hash(password);
+		return hashedInputPassword.equals(hashedInputPassword);
 	}
 
 	public String getLastName() {
@@ -41,14 +55,37 @@ public class User extends BaseEntity {
 		this.lastName = lastName;
 	}
 
-	private String getUserId() {
-		return userId;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	private void setUserId(String userId) {
-		this.userId = userId;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getHashPassword() {
+		return hashPassword;
+	}
+
+	public void setHashPassword(String hashPassword) {
+		this.hashPassword = hashPassword;
+	}
 
 	public String getGender() {
 		return gender;
@@ -58,12 +95,20 @@ public class User extends BaseEntity {
 		this.gender = gender;
 	}
 
-	public String getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 
 }

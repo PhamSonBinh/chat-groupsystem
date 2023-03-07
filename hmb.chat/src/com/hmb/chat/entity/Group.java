@@ -1,28 +1,38 @@
 package com.hmb.chat.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Group {
-	private ArrayList<User> users;
-	private String chatGroupId;
-	private int numberOfUsers;
+public abstract class Group extends BaseEntity{
 
-	public Group(ArrayList<User> users, String chatGroupId) {
-		super();
-		this.users = users;
-		this.chatGroupId = chatGroupId;
-		
+	private List<User> users = new ArrayList<>();
+
+	public List<User> getUsers() {
+		return users;
 	}
-	public void addUser() {
-		
+
+	public boolean deleteUser(int id) {
+		boolean flag = false;
+		User foundUser = getUserById(id);
+		if (foundUser != null) {
+			users.remove(foundUser);
+			flag = true;
+		}
+		return flag;
 	}
-	public void deleteUser() {
-		
+
+	protected void addUser(User user) {
+		users.add(user);
 	}
-	public void createGroup() {
-		
+
+	public User getUserById(int id) {
+		User user = null;
+		for (int i = 0; i < users.size(); i++) {
+			if (id == users.get(i).getId()) {
+				user = users.get(i);
+			}
+		}
+		return user;
 	}
-	public void removeGroup() {
-		
-	}
+
 }
