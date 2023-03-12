@@ -35,6 +35,8 @@ public class InMemoryRepository<TEntity extends BaseEntity> implements Repositor
 		if (entity == null) {
 			return false;
 		}
+		entity.setId(idCounter);
+		idCounter++;
 		entities.add(entity);
 		return true;
 	}
@@ -71,7 +73,7 @@ public class InMemoryRepository<TEntity extends BaseEntity> implements Repositor
 	@Override
 	public List<TEntity> getAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.entities;
 	}
 
 	@Override
