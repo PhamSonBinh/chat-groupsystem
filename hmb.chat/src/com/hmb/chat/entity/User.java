@@ -44,7 +44,7 @@ public class User extends BaseEntity{
 	
 	public boolean login(String password) {
 		String hashedInputPassword = hash(password);
-		return hashedInputPassword.equals(hashedInputPassword);
+		return hashedInputPassword.equals(hashPassword);
 	}
 
 	public String getLastName() {
@@ -107,8 +107,5 @@ public class User extends BaseEntity{
 		return id;
 	}
 
-//	public void setId(int id) {
-//		this.id = id;
-//	}
 
 }

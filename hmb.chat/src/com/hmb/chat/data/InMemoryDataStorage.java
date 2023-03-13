@@ -1,6 +1,7 @@
 package com.hmb.chat.data;
 
-import com.hmb.chat.entity.*;
+import com.hmb.chat.entity.Group;
+import com.hmb.chat.entity.User;
 import com.hmb.chat.repository.InMemoryRepository;
 
 public class InMemoryDataStorage extends DataStorage {
@@ -9,8 +10,8 @@ public class InMemoryDataStorage extends DataStorage {
 	private InMemoryDataStorage() {
 		users = new InMemoryRepository<User>();	
 		groups = new InMemoryRepository<Group>();
-		messages = new InMemoryRepository<Message>();
 	}
+	
 
 	public static InMemoryDataStorage GetInStance() {
 		if (storage == null) {

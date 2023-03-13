@@ -12,7 +12,7 @@ public abstract class DataStorage {
 	public Repository<User> getUsers() {
 		return users;
 	}
-	
+
 	public Repository<Group> getGroups() {
 		return groups;
 	}

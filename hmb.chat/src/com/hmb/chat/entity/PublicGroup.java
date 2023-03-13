@@ -6,13 +6,18 @@ import java.util.List;
 import com.hmb.chat.Service.TextService;
 
 public class PublicGroup extends Group {
+
+
+
 	private String groupCode;
-//	private String groupName;
+	private String groupName;
 	private TextService textService = new TextService();
 
-	public PublicGroup() {
+	public PublicGroup(User user, String groupName) {
 		super();
 		this.groupCode = textService.generateCode();
+		addUser(user);
+		this.groupName = groupName;
 	}
 
 	private boolean joinByCode(User user, String code) {
@@ -28,4 +33,8 @@ public class PublicGroup extends Group {
 		
 		deleteUser(userId);
 	}
+	public String getGroupCode() {
+		return groupCode;
+	}
+	
 }

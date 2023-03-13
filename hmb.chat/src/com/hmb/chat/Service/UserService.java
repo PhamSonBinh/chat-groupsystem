@@ -1,7 +1,6 @@
 package com.hmb.chat.Service;
 
 import com.hmb.chat.data.DataStorage;
-import com.hmb.chat.data.InMemoryDataStorage;
 import com.hmb.chat.entity.User;
 
 public class UserService {

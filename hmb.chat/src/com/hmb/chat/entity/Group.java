@@ -6,7 +6,15 @@ import java.util.List;
 public abstract class Group extends BaseEntity{
 
 	private List<User> users = new ArrayList<>();
+ 	public String getGroupName() {
+		return groupName;
+	}
 
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
+	private String groupName;
 	public List<User> getUsers() {
 		return users;
 	}
@@ -23,7 +31,7 @@ public abstract class Group extends BaseEntity{
 
 	protected void addUser(User user) {
 		users.add(user);
-	}
+	}	
 
 	public User getUserById(int id) {
 		User user = null;

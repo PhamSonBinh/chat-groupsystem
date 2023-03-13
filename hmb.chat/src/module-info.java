@@ -6,4 +6,7 @@
  *
  */
 module psb.chat {
+	requires junit;
+	
+	
 }
