@@ -47,5 +47,14 @@ public class UserServiceTest {
 		boolean isFail = userService.login("hieu", "12123");
 		assertFalse(isFail);
 	}
+	
+	@Test
+	public void getID() {
+		User user = new User("hieu", "123");
+		storage.getUsers().insert(user);
+		
+	}
+	
 
+	
 }

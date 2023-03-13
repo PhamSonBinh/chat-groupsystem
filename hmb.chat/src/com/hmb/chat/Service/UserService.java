@@ -28,4 +28,14 @@ public class UserService {
 		storage.getUsers().insert(newUser);
 		return true;
 	}
+	public boolean addUserID(String username, String password, int id) {
+		User existing = storage.getUsers().getFirst(user -> user.getUserName().equals(username));
+		if (existing != null) {
+			return false;
+		}
+
+		User newUser = new User(username, password, id);
+		storage.getUsers().insert(newUser);
+		return true;
+	}
 }

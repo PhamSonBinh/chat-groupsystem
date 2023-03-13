@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.hmb.chat.Service.TextService;
 
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 	private String lastName;
 	private String firstName;
 	private String fullName;
@@ -37,11 +37,17 @@ public class User extends BaseEntity{
 		this.hashPassword = hash(password);
 	}
 
+	public User(String userName, String password, int id) {
+		this.userName = userName;
+		this.hashPassword = hash(password);
+		this.id = id;
+	}
+
 	private String hash(String text) {
 		TextService textService = new TextService();
 		return textService.hashMD5(text);
 	}
-	
+
 	public boolean login(String password) {
 		String hashedInputPassword = hash(password);
 		return hashedInputPassword.equals(hashPassword);
@@ -106,6 +112,5 @@ public class User extends BaseEntity{
 	public int getId() {
 		return id;
 	}
-
 
 }
