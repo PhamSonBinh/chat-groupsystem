@@ -51,5 +51,4 @@ public class Message extends BaseEntity {
 	public void setReceiverId(int receiverId) {
 		this.receiverId = receiverId;
 	}
-	
 }
