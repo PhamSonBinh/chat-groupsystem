@@ -52,7 +52,4 @@ public class Message extends BaseEntity {
 		this.receiverId = receiverId;
 	}
 	
-	
-	
-	
 }
