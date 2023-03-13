@@ -28,7 +28,7 @@ public class GroupService {
 		this.groupName = groupName;
 	}
 
-	public Group createGroup(User user, String groupType) {
+	public boolean createGroup(User user, String groupType, String groupName) {
 
 		Group group = null;
 		if (groupType.equals("public")) {
@@ -41,8 +41,11 @@ public class GroupService {
 			listPrivateGroup.add(newPrivateGroup);
 			group = newPrivateGroup;
 		}
+		else {
+			return false;
+		}
 		storage.getGroups().insert(group);
-		return group;
+		return true;
 	}
 
 	public boolean RemoveUserFromGroup(int userId, int groupId) {
